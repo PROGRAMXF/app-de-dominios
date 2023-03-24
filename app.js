@@ -4,6 +4,8 @@ const app = express();
 //definimos nuestro motor de plantillas
 app.set("view engine", "ejs");
 
+app.use('/', require('./router'));
+
 //invocamos los metodos de express
 
 app.listen(5000, () => {
