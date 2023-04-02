@@ -1,3 +1,4 @@
+const { request } = require('express');
 const conexion = require('../database/db');
 
 exports.save = (req, res)=>{
@@ -12,3 +13,18 @@ exports.save = (req, res)=>{
 
     });
 };
+
+exports.update = (req, res) =>{
+    const id = request.body.id;
+    const rol = request.body.rol;
+    const user = request.body.user;
+
+    //hacemos la consulta:
+    conexion.query('UPDATE users SET ? WHERE id = ?', [{user:user, rol:rol},id], (error, results)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.redirect('/');
+        }
+    })
+}
