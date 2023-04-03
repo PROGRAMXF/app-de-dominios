@@ -3,9 +3,7 @@ const router = express.Router();
 
 const conexion  = require('./database/db');
 
-router.get('/', (req, res)=>{
-
-        
+router.get('/', (req, res)=>{    
 
     conexion.query('SELECT * FROM users', (error, results)=>{
         if(error){
@@ -25,11 +23,11 @@ router.get('/create', (req, res)=>{
 //ruta para editar los registros
 router.get('/edit/:id', (req, res)=>{
     const id = req.params.id;
-    conexion.query("SELECT * FROM  users WHERE id=?",[id], (error, results)=>{
+    conexion.query('SELECT * FROM  users WHERE id=?',[id], (error, results)=>{
         if(error){
             throw error;
         }else{
-            res.render('edit', {user: results[0]});
+            res.render('edit.ejs', {user: results[0]});
         }
     });
     
