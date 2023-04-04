@@ -37,12 +37,13 @@ router.get('/edit/:id', (req, res)=>{
 //ruta para eliminar el registro
 router.get('/delete/:id', (req, res)=>{
     const id = req.params.id;
-    conexion.query('DELETE FROM users WHERE id = ?', [id], (error, results)=>{
+    conexion.query('DELETE FROM users WHERE id = ?',[id], (error, results)=>{
         if(error){
             throw error;
         }else{
             res.redirect('/');
         }
+
 
     })
 })
