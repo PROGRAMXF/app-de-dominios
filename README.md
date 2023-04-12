@@ -1,4 +1,4 @@
-# app-de-dominios
+# app-de-dominios FUNCIONA
 Aplicacion en node ejs y mysql para registros de dominios
 ![Sin título1](https://user-images.githubusercontent.com/113071685/228998085-d20e10cf-3316-489d-adfe-7bfafdba8c36.png)
 
